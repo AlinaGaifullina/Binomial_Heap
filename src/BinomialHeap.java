@@ -1,6 +1,6 @@
 class BinomialHeap {
 
-    private BinomialHeapNode Nodes;
+    public BinomialHeapNode Nodes;
     private int size;
 
     // Конструктор класса
@@ -27,20 +27,20 @@ class BinomialHeap {
     public void insert(int value)
     {
         if (value > 0) {
-            BinomialHeapNode temp = new BinomialHeapNode(value); //создаем узел со значением value
-            if (Nodes == null) { //если нет узлов в куче
-                Nodes = temp; // присваиваем узел
-                size = 1; // размер кучи становится 1
+            BinomialHeapNode temp = new BinomialHeapNode(value);
+            if (Nodes == null) {
+                Nodes = temp;
+                size = 1;
             }
             else {
-                unionNodes(temp); //иначе объеденяем то, что хотим вставить с тем, что уже есть в куче
+                unionNodes(temp);
                 size++;
             }
         }
     }
 
     // Метод 4 (объединение двух биномиальных куч)
-    private void merge(BinomialHeapNode binHeap)
+    public void merge(BinomialHeapNode binHeap)
     {
         BinomialHeapNode temp1 = Nodes, temp2 = binHeap;
 
